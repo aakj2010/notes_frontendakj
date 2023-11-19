@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // const API_URL = '/api/goals/'
-const API_URL = 'https://notes-akj.onrender.com/api/users/'
+const API_URL = 'https://notes-akj.onrender.com/api/goals/'
 
 // Create new goal
 const createGoal = async (goalData, token) => {
