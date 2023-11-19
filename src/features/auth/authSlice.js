@@ -11,21 +11,21 @@ const initialState = {
   isLoading: false,
   message: '',
 }
-const API_URL = 'https://akj-notes.netlify.app'
+const API_URL = 'https://notes-akj.onrender.com'
 // Register user
-export const register = createAsyncThunk( API_URL + 'auth/register', async (user, thunkAPI) => {
-    try {
-      return await authService.register(user)
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString()
-      return thunkAPI.rejectWithValue(message)
-    }
+export const register = createAsyncThunk(API_URL + 'auth/register', async (user, thunkAPI) => {
+  try {
+    return await authService.register(user)
+  } catch (error) {
+    const message =
+      (error.response &&
+        error.response.data &&
+        error.response.data.message) ||
+      error.message ||
+      error.toString()
+    return thunkAPI.rejectWithValue(message)
   }
+}
 )
 
 // Login user
