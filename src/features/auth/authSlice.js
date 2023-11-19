@@ -11,9 +11,9 @@ const initialState = {
   isLoading: false,
   message: '',
 }
-const API_URL = 'https://notes-akj.onrender.com'
+
 // Register user
-export const register = createAsyncThunk(API_URL + 'auth/register', async (user, thunkAPI) => {
+export const register = createAsyncThunk('auth/register', async (user, thunkAPI) => {
   try {
     return await authService.register(user)
   } catch (error) {
@@ -29,7 +29,7 @@ export const register = createAsyncThunk(API_URL + 'auth/register', async (user,
 )
 
 // Login user
-export const login = createAsyncThunk(API_URL + 'auth/login', async (user, thunkAPI) => {
+export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   try {
     return await authService.login(user)
   } catch (error) {

@@ -8,10 +8,9 @@ const initialState = {
   isLoading: false,
   message: '',
 }
-const API_URL = 'https://notes-akj.onrender.com'
 // Create new goal
 export const createGoal = createAsyncThunk(
- API_URL + 'goals/create',
+  'goals/create',
   async (goalData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
