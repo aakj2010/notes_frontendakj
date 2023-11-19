@@ -8,10 +8,9 @@ const initialState = {
   isLoading: false,
   message: '',
 }
-
+const API_URL = 'https://akj-notes.netlify.app'
 // Create new goal
-export const createGoal = createAsyncThunk(
-  'goals/create',
+export const createGoal = createAsyncThunk( API_URL + 'goals/create',
   async (goalData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -30,7 +29,7 @@ export const createGoal = createAsyncThunk(
 
 // Get user goals
 export const getGoals = createAsyncThunk(
-  'goals/getAll',
+  API_URL + 'goals/getAll',
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -49,7 +48,7 @@ export const getGoals = createAsyncThunk(
 
 // Delete user goal
 export const deleteGoal = createAsyncThunk(
-  'goals/delete',
+  API_URL + 'goals/delete',
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -68,7 +67,7 @@ export const deleteGoal = createAsyncThunk(
 
 // Update user goal
 export const updateGoal = createAsyncThunk(
-  'goals/update',
+  API_URL + 'goals/update',
   async ({ goalId, goalData }, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
